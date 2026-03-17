@@ -19,7 +19,21 @@ class UserController extends Controller
         // return view('home', compact('username,'school));
 
         // direct Method
-        return view('home', ['username' => $username, 'school' => $school]);
+        return view('home', [
+            'username' => $username,
+            'school' => $school
+        ]);
     }
-    //
+    
+
+    public function createAccount(Request $request){
+        echo $_POST['email'];
+        echo $request->password;
+
+        // $_FILES['uploaded_doc'];
+        
+        $request->file('uploaded_doc');
+        $request->input('username');
+        
+    }
 }
